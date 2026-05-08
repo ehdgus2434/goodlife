@@ -1,313 +1,139 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>더 좋은 라이프 든든본부</title>
-  <meta name="description" content="가전 렌탈, KB헬스케어, 상조, 라이프케어, 만기 환급까지 한 번에 준비하세요." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: Pretendard, Apple SD Gothic Neo, sans-serif; }
-  </style>
-</head>
+# 더 좋은 라이프 든든본부 — 최종 고전환 랜딩페이지 제작 프롬프트
 
-<body class="bg-slate-950 text-white">
+아래 프롬프트를 그대로 GPT, Claude, Cursor, Vercel v0 등에 입력하세요.
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.18),transparent_35%)]"></div>
+---
 
-    <div class="relative max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="inline-block bg-yellow-400 text-slate-950 font-black px-4 py-2 rounded-full text-sm mb-5">
-          더 좋은 라이프 든든본부
-        </div>
+## 프롬프트 본문
 
-        <h1 class="text-4xl md:text-6xl font-black leading-tight">
-          가전제품 받고!<br>
-          가족의 미래까지<br>
-          한 번에 준비하세요
-        </h1>
+```txt
+더 좋은 라이프 든든본부 전용 프리미엄 랜딩페이지를 HTML 단일 페이지로 제작해줘.
 
-        <p class="mt-6 text-lg text-slate-300 leading-8">
-          월 3만원대부터 시작 가능한 실속형 혜택.<br>
-          가전 렌탈 + KB헬스케어 + 상조 + 라이프케어 + 만기 환급 구조까지.
-        </p>
+목표:
+- 방문자가 첫 화면 3초 안에 ‘이건 상담 받아봐야겠다’고 느껴야 함
+- 단순 상조가 아닌 ‘가전 혜택 + 건강관리 + 가족 미래 대비 + 만기 환급’ 구조를 강하게 전달
+- 신뢰감 + 후킹 + 고급스러움 + 전환율 최우선
+- 모바일 최적화 필수
+- 세련된 프리미엄 광고형 디자인
+- CTA(카카오톡 상담 / 전화 상담) 클릭률 극대화
 
-        <div class="mt-8 flex flex-col sm:flex-row gap-4">
-          <a href="https://open.kakao.com/o/sCKvq8ni" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-black px-8 py-4 rounded-2xl text-center inline-flex items-center justify-center gap-2">
-            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-950 text-yellow-300 text-xs font-black">TALK</span>
-            카카오톡 상담하기
-          </a>
+브랜드 정보:
+- 브랜드명: 더 좋은 라이프 든든본부
+- 카카오 상담 링크: https://open.kakao.com/o/sCKvq8ni
+- 전화번호: 010-8068-3505
+- 상품 리스트: 개별 상담 시 안내
 
-          <a href="tel:01080683505" class="border border-white/30 hover:bg-white/10 font-bold px-8 py-4 rounded-2xl text-center">
-            전화 상담하기
-          </a>
-        </div>
+핵심 후킹 포인트:
+- 월 3만원대 실속형 시작 가능
+- 가전제품 렌탈 혜택
+- KB헬스케어 제공
+- 상조 서비스 제공
+- 라이프케어 서비스 제공
+- 1인 최대 3구좌 가능
+- 구좌별 상품 차이
+- 상조 및 라이프케어 미사용 시 만기 100% 전액환급
+- 렌탈 제품 만기 후 고객 소유
 
-        <p class="mt-4 text-sm text-slate-400">
-          ※ 구좌별 상세 상품 리스트 및 실제 가능 품목은 개별 상담 시 안내드립니다.
-        </p>
-      </div>
+디자인 방향:
+- 다크네이비 + 골드 + 화이트 기반 프리미엄 컬러
+- 첫 화면은 보험/상조 느낌보다 ‘프리미엄 라이프 혜택 플랫폼’처럼 보이게
+- 신뢰감 있는 대기업급 디자인
+- 고급 카드 UI
+- 둥근 박스, 그림자, 강조 배지 적극 활용
+- CTA 버튼 매우 눈에 띄게
+- 카카오톡 버튼은 노란색 강조
+- 가족, 프리미엄 가전, 행복한 미래 느낌의 이미지 섹션 포함
+- 외부 이미지 URL 사용 (Unsplash/Pexels 기반)
+- 별도 이미지 업로드 필요 없도록 구성
 
-      <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-white/10">
-        <img 
-          src="./family-main.png" 
-          alt="화목한 3세대 가족" 
-          class="w-full h-72 md:h-96 object-cover"
-        />
+필수 섹션 구성:
 
-        <div class="p-6 text-slate-950">
-          <h3 class="text-2xl font-black mb-5">핵심 혜택</h3>
+### 1. HERO SECTION (가장 중요)
+- 초강력 후킹 문구:
+  예시:
+  “가전제품 받고!
+   가족의 미래까지
+   한 번에 준비하세요”
 
-          <div class="space-y-3">
-            <div class="bg-slate-100 rounded-2xl p-4">
-              <p class="font-black">가전 렌탈 혜택</p>
-              <p class="text-sm text-slate-600">구좌별 다양한 가전 선택 가능</p>
-            </div>
+- 서브카피:
+  “월 3만원대부터 시작 가능한 실속형 혜택.
+   가전 렌탈 + KB헬스케어 + 상조 + 라이프케어 + 만기 환급 구조까지.”
 
-            <div class="bg-slate-100 rounded-2xl p-4">
-              <p class="font-black">KB헬스케어</p>
-              <p class="text-sm text-slate-600">건강관리 서비스 제공</p>
-            </div>
+- 핵심 혜택 카드:
+  - 가전 렌탈
+  - KB헬스케어
+  - 상조
+  - 라이프케어
+  - 만기 환급
 
-            <div class="bg-slate-100 rounded-2xl p-4">
-              <p class="font-black">상조 + 라이프케어</p>
-              <p class="text-sm text-slate-600">가족 미래 대비 서비스</p>
-            </div>
+- 카카오톡 상담하기 버튼
+- 전화 상담하기 버튼
+- 신뢰 포인트:
+  - 만기 100% 전액환급
+  - 렌탈 만기 후 내 소유
+  - 가족 맞춤형 구조
 
-            <div class="bg-slate-100 rounded-2xl p-4">
-              <p class="font-black text-red-600">만기 환급</p>
-              <p class="text-sm text-slate-600">상조 및 라이프케어 미사용 시 만기 100% 전액환급</p>
-            </div>
-          </div>
-        </div>
-      </div>
+### 2. 왜 지금 상담해야 하는가
+- 전기세/생활비/가전 필요/부모님 대비/건강관리
+- 소비자가 ‘손해 보기 전에 알아봐야겠다’는 심리 유도
 
-    </div>
-  </section>
+### 3. 구좌별 상품 구조
+- 1구좌
+- 2구좌
+- 3구좌 (가장 인기)
+- 각 구좌별 차이 강조
+- ‘3구좌 추천’ 강조 배지
 
-  <!-- IMAGE STORY -->
-  <section class="bg-white text-slate-950 py-16">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-10">
-        <div class="inline-block bg-slate-950 text-white font-black px-4 py-2 rounded-full text-sm mb-4">
-          상담받고 싶은 이유
-        </div>
+### 4. KB헬스케어 상세 설명
+- 건강관리
+- 건강검진 우대
+- 가족 건강 케어
+- 의료 혜택
 
-        <h2 class="text-3xl md:text-5xl font-black">
-          가전 혜택은 생활을 바꾸고,<br class="hidden md:block">
-          준비는 가족을 지켜줍니다
-        </h2>
+### 5. 상조 + 라이프케어 상세 설명
+- 장례 대비
+- 가족 보호
+- 생활 혜택
+- 여행/교육/제휴 서비스
 
-        <p class="mt-4 text-slate-600 leading-7">
-          필요한 가전은 실속 있게, 가족의 건강과 미래는 더 든든하게 준비하세요.
-        </p>
-      </div>
+### 6. 만기 환급 구조 강조
+- “상조 및 라이프케어 미사용 시 만기 100% 전액환급” 반복 강조
+- 고객 불안 제거
 
-      <div class="grid md:grid-cols-3 gap-5">
-        <div class="relative overflow-hidden rounded-[2rem] shadow-xl">
-          <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80" alt="주방 가전과 생활 공간" class="h-72 w-full object-cover" />
-          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-6 text-white">
-            <p class="text-2xl font-black">필요한 가전 선택</p>
-            <p class="mt-2 text-sm text-slate-200">냉장고·세탁기·TV·안마의자 등 상담 후 안내</p>
-          </div>
-        </div>
+### 7. 실제 소비자 심리 FAQ
+- 진짜 손해 아닌가요?
+- 가전은 언제 설치되나요?
+- 만기 환급 조건은?
+- 렌탈 후 소유권은?
 
-        <div class="relative overflow-hidden rounded-[2rem] shadow-xl">
-          <img src="./family-main.png" alt="함께 웃는 화목한 가족" class="h-72 w-full object-cover" />
-          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-6 text-white">
-            <p class="text-2xl font-black">가족을 위한 준비</p>
-            <p class="mt-2 text-sm text-slate-200">부모님과 가족의 미래를 미리 대비</p>
-          </div>
-        </div>
+### 8. 강력한 최종 CTA
+- “지금 상담만 받아도
+   내 조건에 맞는 가전/혜택/환급 구조를 확인할 수 있습니다.”
 
-        <div class="relative overflow-hidden rounded-[2rem] shadow-xl">
-          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="프리미엄 거실 인테리어" class="h-72 w-full object-cover" />
-          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-6 text-white">
-            <p class="text-2xl font-black">상담으로 맞춤 설계</p>
-            <p class="mt-2 text-sm text-slate-200">구좌별 상품과 혜택을 개별 안내</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+- 카카오톡 상담하기
+- 전화 문의하기
 
-  <!-- PRODUCT -->
-  <section class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-black">1인 최대 3구좌까지 선택 가능</h2>
-      <p class="mt-4 text-slate-300">구좌별 선택 가능한 렌탈 가전이 다릅니다.</p>
-    </div>
+카피라이팅 스타일:
+- 광고 대행사 수준
+- 소비자 클릭 유도형
+- 후킹 강함
+- 과장보다 설득력 중심
+- 신뢰 + 긴급성 + 혜택 강조
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white/10 rounded-3xl p-8 border border-white/10">
-        <div class="bg-blue-500 inline-block px-3 py-1 rounded-full text-sm font-bold">1구좌</div>
-        <h3 class="text-3xl font-black mt-4">실속형</h3>
-        <p class="mt-3 text-slate-300">벽걸이 에어컨 등 입문형 가전</p>
-      </div>
+기술 조건:
+- HTML 단일 파일
+- Tailwind CSS CDN 사용
+- 반응형 디자인
+- SEO 메타태그 포함
+- 스크롤 자연스럽게
+- 버튼 hover 효과
+- 고급스러운 애니메이션 약간
+- 코드 전체 출력
 
-      <div class="bg-white/10 rounded-3xl p-8 border border-white/10">
-        <div class="bg-green-500 inline-block px-3 py-1 rounded-full text-sm font-bold">2구좌</div>
-        <h3 class="text-3xl font-black mt-4">생활형</h3>
-        <p class="mt-3 text-slate-300">생활 필수 가전 중심</p>
-      </div>
-
-      <div class="bg-white/10 rounded-3xl p-8 border border-yellow-400 shadow-xl">
-        <div class="bg-yellow-400 text-slate-950 inline-block px-3 py-1 rounded-full text-sm font-black">3구좌 인기형</div>
-        <h3 class="text-3xl font-black mt-4">프리미엄형</h3>
-        <p class="mt-3 text-slate-300">스탠드 에어컨 등 프리미엄 가전</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DETAIL -->
-  <section class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center mb-12">
-      <div class="inline-block bg-yellow-400 text-slate-950 font-black px-4 py-2 rounded-full text-sm mb-4">
-        혜택을 더 자세히 확인하세요
-      </div>
-
-      <h2 class="text-3xl md:text-5xl font-black">가전만 받는 상품이 아닙니다</h2>
-
-      <p class="mt-4 text-slate-300 leading-7">
-        더 좋은 라이프 든든본부는 가전 혜택과 함께<br class="hidden md:block">
-        건강관리와 가족의 미래 대비까지 함께 준비할 수 있는 구조입니다.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-[2rem] p-8 text-slate-950 shadow-2xl">
-        <div class="inline-block bg-blue-600 text-white font-black px-4 py-2 rounded-full text-sm mb-5">
-          KB헬스케어 혜택
-        </div>
-
-        <h3 class="text-3xl font-black leading-tight">
-          건강관리까지 함께 챙기는<br>
-          라이프케어 혜택
-        </h3>
-
-        <p class="mt-5 text-slate-600 leading-8">
-          단순히 가전만 제공받는 것이 아니라, 건강검진·건강관리·의료지원 등 가족의 건강을 챙길 수 있는 헬스케어 혜택을 함께 안내받을 수 있습니다.
-        </p>
-
-        <div class="mt-6 space-y-3">
-          <div class="bg-slate-100 rounded-2xl p-4 font-bold">건강검진 및 건강관리 관련 혜택 안내</div>
-          <div class="bg-slate-100 rounded-2xl p-4 font-bold">가족 건강을 위한 생활밀착형 서비스</div>
-          <div class="bg-slate-100 rounded-2xl p-4 font-bold">구체적인 제공 범위는 상담 시 상품 조건 기준으로 안내</div>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-[2rem] p-8 text-slate-950 shadow-2xl">
-        <div class="inline-block bg-slate-950 text-white font-black px-4 py-2 rounded-full text-sm mb-5">
-          상조 서비스 혜택
-        </div>
-
-        <h3 class="text-3xl font-black leading-tight">
-          가족의 마지막 순간까지<br>
-          든든하게 준비
-        </h3>
-
-        <p class="mt-5 text-slate-600 leading-8">
-          상조 서비스는 갑작스러운 상황에서 장례 절차, 장례용품, 의전, 행정 절차 등을 체계적으로 지원받기 위한 가족 대비 서비스입니다.
-        </p>
-
-        <div class="mt-6 space-y-3">
-          <div class="bg-slate-100 rounded-2xl p-4 font-bold">장례 절차와 의전 서비스 지원</div>
-          <div class="bg-slate-100 rounded-2xl p-4 font-bold">가족이 당황하지 않도록 체계적인 안내</div>
-          <div class="bg-slate-100 rounded-2xl p-4 font-bold text-red-600">상조 및 라이프케어 미사용 시 만기 100% 전액환급</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <section class="bg-white text-slate-950 py-16">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl md:text-5xl font-black leading-tight">
-          왜 든든본부에서<br>
-          상담해야 할까요?
-        </h2>
-
-        <p class="mt-6 text-lg text-slate-600 leading-8">
-          단순 가입 안내가 아닌,<br>
-          고객 상황에 맞는 구좌 설계 / 가전 선택 / 환급 조건 / 가족 미래 대비까지 체계적으로 안내합니다.
-        </p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="bg-slate-100 rounded-2xl p-4 font-bold">구좌별 상품 비교 안내</div>
-        <div class="bg-slate-100 rounded-2xl p-4 font-bold">가전 설치 과정 안내</div>
-        <div class="bg-slate-100 rounded-2xl p-4 font-bold">상조 및 라이프케어 미사용 시 환급 조건 안내</div>
-        <div class="bg-slate-100 rounded-2xl p-4 font-bold">부모님 / 가족 맞춤 설계</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-black">자주 묻는 질문</h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white/10 rounded-3xl p-6">
-        <h3 class="font-black text-xl">Q. 가전은 언제 설치되나요?</h3>
-        <p class="mt-3 text-slate-300">계약 완료 후 상품별 일정에 따라 설치됩니다.</p>
-      </div>
-
-      <div class="bg-white/10 rounded-3xl p-6">
-        <h3 class="font-black text-xl">Q. 1명이 최대 몇 구좌까지 가능한가요?</h3>
-        <p class="mt-3 text-slate-300">1인 최대 3구좌까지 가능합니다.</p>
-      </div>
-
-      <div class="bg-white/10 rounded-3xl p-6">
-        <h3 class="font-black text-xl">Q. 만기 환급 조건은?</h3>
-        <p class="mt-3 text-slate-300">상조 및 라이프케어 미사용 시 만기 100% 전액환급입니다.</p>
-      </div>
-
-      <div class="bg-white/10 rounded-3xl p-6">
-        <h3 class="font-black text-xl">Q. 렌탈 제품은 내 소유가 되나요?</h3>
-        <p class="mt-3 text-slate-300">만기 후 고객 소유로 전환됩니다.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="px-6 pb-20">
-    <div class="max-w-5xl mx-auto mb-8 grid md:grid-cols-2 gap-5">
-      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80" alt="밝은 거실과 가전" class="h-64 w-full object-cover rounded-[2rem] shadow-2xl border border-white/10" />
-
-      <img src="./family-main.png" alt="화목한 가족" class="h-64 w-full object-cover rounded-[2rem] shadow-2xl border border-white/10" />
-    </div>
-
-    <div class="max-w-5xl mx-auto bg-yellow-400 rounded-[2rem] p-10 md:p-16 text-center text-slate-950 shadow-2xl">
-      <h2 class="text-3xl md:text-6xl font-black leading-tight">
-        지금 필요한 가전,<br>
-        미래를 위한 혜택까지
-      </h2>
-
-      <p class="mt-6 text-lg font-semibold">
-        상담만 받아도 구좌별 가능 상품 / 예상 혜택 / 실제 가전 선택 옵션까지 빠르게 확인 가능합니다.
-      </p>
-
-      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-        <a href="https://open.kakao.com/o/sCKvq8ni" target="_blank" class="bg-slate-950 hover:bg-slate-800 text-white font-black px-8 py-4 rounded-2xl inline-flex items-center justify-center gap-2">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-yellow-400 text-slate-950 text-xs font-black">TALK</span>
-          카카오톡 상담하기
-        </a>
-
-        <a href="tel:01080683505" class="border-2 border-slate-950 text-slate-950 font-black px-8 py-4 rounded-2xl">
-          전화 문의하기
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="border-t border-white/10 py-8 text-center text-slate-500 text-sm">
-    더 좋은 라이프 든든본부 · 상담 후 상품 약관 및 조건을 반드시 확인해주세요.
-  </footer>
-
-</body>
-</html>
+최종 목표:
+이 페이지를 본 사람이
+“이거 생각보다 괜찮은데?”
+“일단 상담은 받아보자”
+“부모님이나 우리집도 가능할까?”
+라는 반응이 들도록 설계.
+```
