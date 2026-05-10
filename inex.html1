@@ -1,0 +1,353 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Menu,
+  X,
+  Phone,
+  MessageCircle,
+  Users,
+  ShieldCheck,
+  HeartHandshake,
+  ChevronRight,
+  CheckCircle2,
+  ExternalLink,
+} from "lucide-react";
+
+const NAV_ITEMS = [
+  { label: "든든본부 소개", href: "#about" },
+  { label: "상조 안내", href: "#service" },
+  { label: "상담 신청", href: "#consult" },
+  { label: "플래너 모집", href: "#recruit" },
+  { label: "FAQ", href: "#faq" },
+];
+
+const OFFICIAL_SITE = "https://joeunlife.com/";
+const LANDING_PAGE = "https://goodlife1.vercel.app/";
+const KAKAO_LINK = "https://open.kakao.com/o/sCKvq8ni";
+const PHONE_NUMBER = "010-8068-3505";
+const FORM_LINK = "https://open.kakao.com/o/sCKvq8ni";
+
+export default function DdLifeHomepage() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const scrollTo = (href) => {
+    setIsOpen(false);
+    const target = document.querySelector(href);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return (
+    <main className="min-h-screen bg-[#F8F5EF] text-[#1F2933]">
+      <header className="sticky top-0 z-50 border-b border-[#E7DED0] bg-[#F8F5EF]/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+          <button onClick={() => scrollTo("#home")} className="text-left">
+            <p className="text-sm font-semibold tracking-[0.28em] text-[#9A6A2F]">THE GOOD LIFE</p>
+            <h1 className="text-xl font-black text-[#26211C]">더 좋은 라이프 든든본부</h1>
+          </button>
+
+          <nav className="hidden items-center gap-7 md:flex">
+            {NAV_ITEMS.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => scrollTo(item.href)}
+                className="text-sm font-semibold text-[#4B5563] transition hover:text-[#9A6A2F]"
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-2 md:flex">
+            <a
+              href={`tel:${PHONE_NUMBER.replaceAll("-", "")}`}
+              className="rounded-full border border-[#C9A66B] px-4 py-2 text-sm font-bold text-[#8A5B24] transition hover:bg-[#EFE5D4]"
+            >
+              전화 상담
+            </a>
+            <button
+              onClick={() => scrollTo("#consult")}
+              className="rounded-full bg-[#26211C] px-4 py-2 text-sm font-bold text-white shadow-lg transition hover:bg-[#3A3028]"
+            >
+              무료 상담 신청
+            </button>
+          </div>
+
+          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="메뉴 열기">
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+
+        {isOpen && (
+          <div className="border-t border-[#E7DED0] bg-[#F8F5EF] px-5 py-4 md:hidden">
+            <div className="flex flex-col gap-3">
+              {NAV_ITEMS.map((item) => (
+                <button
+                  key={item.href}
+                  onClick={() => scrollTo(item.href)}
+                  className="rounded-xl px-3 py-3 text-left font-semibold hover:bg-[#EFE5D4]"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </header>
+
+      <section id="home" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#E8D4A2,transparent_35%),radial-gradient(circle_at_bottom_left,#D8C3A5,transparent_28%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-20 md:grid-cols-[1.1fr_0.9fr] md:px-8 md:py-28">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D7B978] bg-white/60 px-4 py-2 text-sm font-bold text-[#8A5B24] shadow-sm">
+              <ShieldCheck size={18} /> 더 좋은 라이프 공식 파트너
+            </div>
+            <h2 className="text-4xl font-black leading-tight tracking-tight text-[#26211C] md:text-6xl">
+              상조를 위한 상조가 아닌,
+              <br />
+              <span className="text-[#9A6A2F]">미래를 위한 상조.</span>
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#4B5563] md:text-xl">
+              더 좋은 라이프 든든본부에서 고객님의 상황에 맞는 상조 준비와 라이프 플래너 활동을 쉽고 정확하게 안내해드립니다.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <button
+                onClick={() => scrollTo("#consult")}
+                className="group inline-flex items-center justify-center rounded-2xl bg-[#26211C] px-6 py-4 font-bold text-white shadow-xl transition hover:bg-[#3A3028]"
+              >
+                무료 상담 신청하기 <ChevronRight className="ml-2 transition group-hover:translate-x-1" size={20} />
+              </button>
+              <button
+                onClick={() => scrollTo("#recruit")}
+                className="inline-flex items-center justify-center rounded-2xl border border-[#C9A66B] bg-white/70 px-6 py-4 font-bold text-[#8A5B24] transition hover:bg-[#EFE5D4]"
+              >
+                라이프 플래너 지원하기
+              </button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="rounded-[2rem] border border-white/80 bg-white/60 p-6 shadow-2xl backdrop-blur"
+          >
+            <div className="rounded-[1.5rem] bg-[#26211C] p-7 text-white">
+              <p className="text-sm font-semibold tracking-[0.25em] text-[#E8D4A2]">DUNDUN HQ</p>
+              <h3 className="mt-4 text-3xl font-black">든든한 준비는 상담에서 시작됩니다.</h3>
+              <p className="mt-4 leading-7 text-white/75">
+                가입 권유 중심이 아닌, 고객 상황을 먼저 듣고 필요한 준비 방향을 안내합니다.
+              </p>
+              <div className="mt-8 grid gap-3">
+                {[
+                  "상조 가입 상담",
+                  "기존 상조 비교",
+                  "부모님·가족 상조 준비",
+                  "라이프 플래너 활동 문의",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/10 p-4">
+                    <CheckCircle2 className="text-[#E8D4A2]" size={20} />
+                    <span className="font-semibold">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <SectionLabel>ABOUT</SectionLabel>
+        <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <h2 className="text-3xl font-black leading-tight md:text-5xl">
+              고객의 오늘과 내일을 함께 준비하는 든든본부
+            </h2>
+          </div>
+          <div className="rounded-[2rem] bg-white p-7 shadow-sm md:p-9">
+            <p className="text-lg leading-8 text-[#4B5563]">
+              든든본부는 더 좋은 라이프의 가치를 바탕으로 고객에게 필요한 상조 서비스를 쉽고 정확하게 안내하는 상담 전문 조직입니다. 단순한 가입 권유가 아니라, 고객의 상황에 맞는 준비와 선택을 도와드리는 것을 목표로 합니다.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <InfoCard icon={<HeartHandshake />} title="상담 중심" text="고객 상황을 먼저 듣고 필요한 방향을 안내합니다." />
+              <InfoCard icon={<ShieldCheck />} title="신뢰 중심" text="공식 브랜드 기반의 상품과 서비스를 안내합니다." />
+              <InfoCard icon={<Users />} title="성장 중심" text="함께 활동할 라이프 플래너의 성장을 지원합니다." />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="service" className="bg-[#26211C] px-5 py-20 text-white md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionLabel light>WHY GOOD LIFE</SectionLabel>
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
+              <h2 className="text-3xl font-black leading-tight md:text-5xl">
+                갑작스러운 순간,
+                <br />
+                준비의 차이는 큽니다.
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-white/70">
+                상조는 단순한 상품이 아니라 가족의 부담을 줄이고, 중요한 순간의 절차와 비용을 미리 준비하는 선택입니다.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={OFFICIAL_SITE}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-4 font-bold text-[#26211C]"
+                >
+                  공식 홈페이지 보기 <ExternalLink className="ml-2" size={18} />
+                </a>
+                <a
+                  href={LANDING_PAGE}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-4 font-bold text-white"
+                >
+                  기존 랜딩페이지 보기
+                </a>
+              </div>
+            </div>
+            <div className="grid gap-4">
+              {[
+                ["절차 부담 완화", "갑작스러운 상황에서 장례 절차와 준비를 혼자 결정해야 하는 부담을 줄입니다."],
+                ["비용 리스크 관리", "예상하지 못한 지출에 대비해 가족의 재정적 부담을 낮출 수 있습니다."],
+                ["가족을 위한 준비", "본인을 위한 준비를 넘어 남겨질 가족을 위한 책임 있는 선택입니다."],
+                ["전문 상담 안내", "든든본부가 고객 상황에 맞는 준비 방향을 쉽게 설명드립니다."],
+              ].map(([title, text]) => (
+                <div key={title} className="rounded-[1.5rem] border border-white/10 bg-white/10 p-6">
+                  <h3 className="text-xl font-black text-[#E8D4A2]">{title}</h3>
+                  <p className="mt-3 leading-7 text-white/70">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="consult" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <SectionLabel>CONSULTING</SectionLabel>
+        <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <h2 className="text-3xl font-black leading-tight md:text-5xl">지금 필요한 준비, 상담부터 시작하세요.</h2>
+            <p className="mt-5 text-lg leading-8 text-[#4B5563]">
+              상담 신청 링크는 네이버폼, 구글폼, 카카오톡 채널 등으로 연결할 수 있습니다.
+            </p>
+          </div>
+          <div className="rounded-[2rem] bg-white p-7 shadow-sm md:p-9">
+            <div className="grid gap-4 md:grid-cols-2">
+              <ContactButton icon={<Phone />} title="전화 상담" text={PHONE_NUMBER} href={`tel:${PHONE_NUMBER.replaceAll("-", "")}`} />
+              <ContactButton icon={<MessageCircle />} title="카카오톡 상담" text="채널 연결 예정" href={KAKAO_LINK} />
+            </div>
+            <a
+              href={FORM_LINK}
+              className="mt-5 flex items-center justify-between rounded-2xl bg-[#26211C] p-5 font-bold text-white transition hover:bg-[#3A3028]"
+            >
+              무료 상담 신청폼 열기 <ChevronRight size={20} />
+            </a>
+            <div className="mt-7 rounded-2xl bg-[#F8F5EF] p-5">
+              <p className="font-black">상담 가능 분야</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {['상조 가입 상담', '기존 상조 비교', '부모님 상조 준비', '가족 단위 상담', '라이프 플래너 문의'].map((tag) => (
+                  <span key={tag} className="rounded-full bg-white px-4 py-2 text-sm font-bold text-[#8A5B24]">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recruit" className="bg-[#EFE5D4] px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionLabel>RECRUIT</SectionLabel>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="text-3xl font-black leading-tight md:text-5xl">함께 성장할 라이프 플래너를 모집합니다.</h2>
+              <p className="mt-5 text-lg leading-8 text-[#4B5563]">
+                든든본부는 고객의 미래를 함께 준비할 책임감 있는 라이프 플래너를 기다립니다.
+              </p>
+            </div>
+            <div className="grid gap-4">
+              {[
+                "영업 경험이 있는 분",
+                "새로운 수익 파이프라인을 찾는 분",
+                "고객 상담에 자신 있는 분",
+                "상조·보험·렌탈·영업 분야 경험자",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-2xl bg-white p-5 font-bold shadow-sm">
+                  <CheckCircle2 className="text-[#9A6A2F]" /> {item}
+                </div>
+              ))}
+              <a href={FORM_LINK} className="mt-2 rounded-2xl bg-[#9A6A2F] px-6 py-4 text-center font-black text-white shadow-lg transition hover:bg-[#83551F]">
+                라이프 플래너 지원하기
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <SectionLabel>FAQ</SectionLabel>
+        <h2 className="text-3xl font-black md:text-5xl">자주 묻는 질문</h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <FaqCard q="상담만 받아도 되나요?" a="네. 가입을 강요하지 않으며 현재 상황에 맞는 준비 방향을 안내드립니다." />
+          <FaqCard q="기존 상조와 비교 상담도 가능한가요?" a="네. 현재 가입 중인 상품을 기준으로 비교 상담이 가능합니다." />
+          <FaqCard q="라이프 플래너는 경험이 없어도 가능한가요?" a="가능합니다. 상담 방식과 상품 이해를 위한 교육을 함께 제공합니다." />
+        </div>
+      </section>
+
+      <footer className="bg-[#26211C] px-5 py-12 text-white md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div>
+            <p className="text-sm font-semibold tracking-[0.28em] text-[#E8D4A2]">THE GOOD LIFE DUNDUN HQ</p>
+            <h2 className="mt-2 text-2xl font-black">더 좋은 라이프 든든본부</h2>
+            <p className="mt-4 max-w-xl leading-7 text-white/65">
+              상조를 위한 상조가 아닌, 미래를 위한 상조. 더 좋은 라이프 든든본부에서 든든한 라이프 플래너가 되어 드리겠습니다.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a href={`tel:${PHONE_NUMBER.replaceAll("-", "")}`} className="rounded-full bg-white px-5 py-3 text-center font-bold text-[#26211C]">전화 상담</a>
+            <a href={KAKAO_LINK} className="rounded-full border border-white/20 px-5 py-3 text-center font-bold">카카오톡 상담</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
+
+function SectionLabel({ children, light = false }) {
+  return (
+    <p className={`mb-4 text-sm font-black tracking-[0.3em] ${light ? "text-[#E8D4A2]" : "text-[#9A6A2F]"}`}>
+      {children}
+    </p>
+  );
+}
+
+function InfoCard({ icon, title, text }) {
+  return (
+    <div className="rounded-2xl bg-[#F8F5EF] p-5">
+      <div className="mb-4 inline-flex rounded-xl bg-white p-3 text-[#9A6A2F]">{icon}</div>
+      <h3 className="font-black">{title}</h3>
+      <p className="mt-2 text-sm leading-6 text-[#4B5563]">{text}</p>
+    </div>
+  );
+}
+
+function ContactButton({ icon, title, text, href }) {
+  return (
+    <a href={href} className="rounded-2xl border border-[#E7DED0] p-5 transition hover:bg-[#F8F5EF]">
+      <div className="mb-4 inline-flex rounded-xl bg-[#EFE5D4] p-3 text-[#9A6A2F]">{icon}</div>
+      <p className="font-black">{title}</p>
+      <p className="mt-2 text-sm text-[#4B5563]">{text}</p>
+    </a>
+  );
+}
+
+function FaqCard({ q, a }) {
+  return (
+    <div className="rounded-[1.5rem] bg-white p-6 shadow-sm">
+      <h3 className="text-lg font-black text-[#26211C]">Q. {q}</h3>
+      <p className="mt-4 leading-7 text-[#4B5563]">A. {a}</p>
+    </div>
+  );
+}
