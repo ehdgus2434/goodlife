@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>더 좋은 라이프 든든본부</title>
+  <meta name="description" content="상조를 위한 상조가 아닌, 미래를 위한 상조. 더 좋은 라이프 든든본부에서 상담과 라이프 플래너 활동을 안내해드립니다." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f5ef; color: #26211c; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(248,245,239,.92); backdrop-filter: blur(12px); border-bottom: 1px solid #e7ded0; }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand-small { color: #9a6a2f; font-size: 12px; font-weight: 800; letter-spacing: .25em; }
+    .brand { font-size: 22px; font-weight: 900; }
+    .menu { display: flex; gap: 24px; font-size: 14px; font-weight: 700; color: #4b5563; }
+    .menu a:hover { color: #9a6a2f; }
+    .nav-actions { display: flex; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 20px; border-radius: 999px; font-weight: 800; border: 1px solid transparent; cursor: pointer; }
+    .btn-dark { background: #26211c; color: white; box-shadow: 0 10px 24px rgba(38,33,28,.2); }
+    .btn-gold { background: #9a6a2f; color: white; }
+    .btn-line { border-color: #c9a66b; color: #8a5b24; background: rgba(255,255,255,.55); }
+    .hero { position: relative; overflow: hidden; padding: 96px 0; background: radial-gradient(circle at top right,#ead7a8,transparent 35%), radial-gradient(circle at bottom left,#dcc5a4,transparent 30%); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; }
+    .badge { display: inline-block; margin-bottom: 24px; padding: 9px 16px; border-radius: 999px; border: 1px solid #d7b978; background: rgba(255,255,255,.62); color: #8a5b24; font-weight: 900; }
+    h1 { font-size: clamp(40px, 6vw, 68px); line-height: 1.12; letter-spacing: -0.05em; font-weight: 950; }
+    .gold { color: #9a6a2f; }
+    .hero p { margin-top: 24px; font-size: 20px; color: #4b5563; max-width: 680px; }
+    .hero-buttons { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+    .hero-card { background: rgba(255,255,255,.66); border: 1px solid rgba(255,255,255,.8); padding: 22px; border-radius: 34px; box-shadow: 0 24px 60px rgba(38,33,28,.16); }
+    .dark-card { background: #26211c; color: white; border-radius: 26px; padding: 34px; }
+    .dark-card h2 { font-size: 34px; line-height: 1.25; margin-top: 12px; }
+    .dark-card p { color: rgba(255,255,255,.72); font-size: 16px; }
+    .check-list { margin-top: 26px; display: grid; gap: 12px; }
+    .check { background: rgba(255,255,255,.1); padding: 15px; border-radius: 18px; font-weight: 800; }
+    section { padding: 86px 0; }
+    .label { color: #9a6a2f; font-size: 13px; font-weight: 950; letter-spacing: .3em; margin-bottom: 16px; }
+    .section-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; }
+    .section-title { font-size: clamp(32px, 4vw, 52px); line-height: 1.18; letter-spacing: -0.04em; font-weight: 950; }
+    .white-card { background: white; border-radius: 30px; padding: 34px; box-shadow: 0 10px 28px rgba(38,33,28,.06); }
+    .white-card p { font-size: 18px; color: #4b5563; }
+    .mini-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 26px; }
+    .mini { background: #f8f5ef; border-radius: 22px; padding: 22px; }
+    .mini h3 { margin-bottom: 8px; }
+    .dark-section { background: #26211c; color: white; }
+    .dark-section .label { color: #e8d4a2; }
+    .dark-section p { color: rgba(255,255,255,.72); }
+    .benefits { display: grid; gap: 14px; }
+    .benefit { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.12); border-radius: 24px; padding: 24px; }
+    .benefit h3 { color: #e8d4a2; font-size: 21px; margin-bottom: 8px; }
+    .contact-grid, .faq-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .contact-box { border: 2px solid #c9a66b; border-radius: 22px; padding: 26px; background: #fffaf2; box-shadow: 0 10px 24px rgba(154,106,47,.12); }
+    .contact-box h3 { font-size: 22px; color: #8a5b24; margin-bottom: 8px; }
+    .contact-box p { font-size: 20px; font-weight: 950; color: #26211c; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag { background: white; color: #8a5b24; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: 800; }
+    .recruit { background: #efe5d4; }
+    .recruit-list { display: grid; gap: 12px; }
+    .recruit-item { background: white; border-radius: 20px; padding: 18px; font-weight: 850; }
+    .faq-grid { grid-template-columns: repeat(3,1fr); margin-top: 34px; }
+    .faq { background: white; border-radius: 24px; padding: 26px; box-shadow: 0 10px 28px rgba(38,33,28,.06); }
+    .faq h3 { margin-bottom: 12px; }
+    footer { background: #26211c; color: white; padding: 46px 0; }
+    footer p { color: rgba(255,255,255,.65); margin-top: 12px; max-width: 720px; }
+    .footer-flex { display: flex; justify-content: space-between; gap: 28px; align-items: end; }
+    @media (max-width: 900px) {
+      .menu, .nav-actions { display: none; }
+      .hero-grid, .section-grid { grid-template-columns: 1fr; }
+      .mini-grid, .faq-grid, .contact-grid { grid-template-columns: 1fr; }
+      .footer-flex { display: block; }
+      .hero { padding: 72px 0; }
+      section { padding: 68px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home">
+        <div class="brand-small">THE GOOD LIFE</div>
+        <div class="brand">더 좋은 라이프 든든본부</div>
+      </a>
+      <nav class="menu">
+        <a href="#about">든든본부 소개</a>
+        <a href="#service">상조 안내</a>
+        <a href="#consult">상담 신청</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-line" href="tel:01080683505">전화 상담</a>
+        <a class="btn btn-dark" href="#consult">무료 상담 신청</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">더 좋은 라이프 공식 파트너</div>
+          <h1>상조를 위한 상조가 아닌,<br><span class="gold">미래를 위한 상조.</span></h1>
+          <p>더 좋은 라이프 든든본부에서 고객님의 상황에 맞는 상조 준비와 라이프 플래너 활동을 쉽고 정확하게 안내해드립니다.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-dark" href="https://open.kakao.com/o/sCKvq8ni" target="_blank">무료 상담 신청하기</a>
+            <a class="btn btn-line" href="https://thejoeunlist.netlify.app/" target="_blank">최신가전 리스트 보기</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="dark-card">
+            <div class="brand-small">DUNDUN HQ</div>
+            <h2>든든한 준비는 상담에서 시작됩니다.</h2>
+            <p>가입 권유 중심이 아닌, 고객 상황을 먼저 듣고 필요한 준비 방향을 안내합니다.</p>
+            <div class="check-list">
+              <div class="check">✓ 상조 가입 상담</div>
+              <div class="check">✓ 기존 상조 비교</div>
+              <div class="check">✓ 부모님·가족 상조 준비</div>
+              <div class="check">✓ 최신가전 결합 상품 안내</div>
+              <div class="check">✓ KB헬스케어 결합 라이프케어 안내</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container section-grid">
+        <div>
+          <div class="label">ABOUT</div>
+          <h2 class="section-title">고객의 오늘과 내일을 함께 준비하는 든든본부</h2>
+        </div>
+        <div class="white-card">
+          <p>든든본부는 더 좋은 라이프의 가치를 바탕으로 고객에게 필요한 상조 서비스를 쉽고 정확하게 안내하는 상담 전문 조직입니다. 단순한 가입 권유가 아니라, 고객의 상황에 맞는 준비와 선택을 도와드리는 것을 목표로 합니다.</p>
+          <div class="mini-grid">
+            <div class="mini"><h3>상담 중심</h3><p>고객 상황을 먼저 듣고 필요한 방향을 안내합니다.</p></div>
+            <div class="mini"><h3>신뢰 중심</h3><p>공식 브랜드 기반의 상품과 서비스를 안내합니다.</p></div>
+            <div class="mini"><h3>결합 혜택</h3><p>최신가전과 KB헬스케어 기반 라이프케어 혜택을 함께 안내합니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="dark-section">
+      <div class="container section-grid">
+        <div>
+          <div class="label">APPLIANCE + LIFECARE</div>
+          <h2 class="section-title">최신가전 결합과<br>KB헬스케어 라이프케어를 함께.</h2>
+          <p style="margin-top:22px;font-size:18px;">든든본부는 단순 상조 가입이 아니라, 최신가전 결합 혜택과 KB헬스케어 기반 라이프케어 서비스를 함께 안내합니다.</p>
+          <div class="hero-buttons">
+            <a class="btn" style="background:#fff;color:#26211c;" href="https://thejoeunlist.netlify.app/" target="_blank">최신가전 리스트 보기</a>
+            <a class="btn btn-line" style="color:white;border-color:rgba(255,255,255,.25);" href="https://thejoeunkb.netlify.app/" target="_blank">KB헬스케어 소개 보기</a>
+          </div>
+        </div>
+        <div class="benefits">
+          <div class="benefit"><h3>최신가전 결합</h3><p>상조 상품과 최신가전 렌탈을 결합해 실생활에 바로 필요한 혜택을 함께 준비할 수 있습니다.</p></div>
+          <div class="benefit"><h3>월 납입 구조</h3><p>1구좌 기준 1~60회차 월 35,000원입니다. 렌탈비 33,000원과 상조 2,000원이 포함됩니다.</p></div>
+          <div class="benefit"><h3>61~240회차 납입</h3><p>61회차부터 240회차까지는 상조 납입금 월 16,000원으로 진행됩니다.</p></div>
+          <div class="benefit"><h3>5년 납입 후 소유권</h3><p>렌탈 결합 가전은 5년 납입 완료 시 렌탈 소유권을 가져가는 구조입니다.</p></div>
+          <div class="benefit"><h3>20년 만기 전액 환급</h3><p>20년 총 만기 납입 시점에 상조 및 라이프케어 서비스를 미사용한 경우 100% 전액 환급됩니다.</p></div>
+          <div class="benefit"><h3>KB헬스케어 결합</h3><p>상조 준비와 함께 건강관리·라이프케어 영역까지 연결되는 결합 상품으로 안내드립니다.</p></div>
+          <div class="benefit"><h3>KB헬스케어 상세 안내</h3><p>전용 소개 페이지를 통해 건강관리 서비스, 라이프케어 혜택, 결합 구조를 더욱 자세히 확인할 수 있습니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consult">
+      <div class="container section-grid">
+        <div>
+          <div class="label">CONSULTING</div>
+          <h2 class="section-title">지금 필요한 준비,<br>상담부터 시작하세요.</h2>
+          <p style="margin-top:20px;color:#4b5563;font-size:18px;">전화 또는 카카오톡으로 편하게 문의하실 수 있습니다.</p>
+        </div>
+        <div class="white-card">
+          <div class="contact-grid">
+            <a class="contact-box" href="tel:01080683505"><h3>전화 상담 바로 연결</h3><p>010-8068-3505</p></a>
+            <a class="contact-box" href="https://open.kakao.com/o/sCKvq8ni" target="_blank"><h3>카카오톡 1:1 상담</h3><p>지금 바로 문의하기</p></a>
+          </div>
+          <a class="btn btn-dark" style="width:100%;margin-top:18px;border-radius:20px;" href="https://open.kakao.com/o/sCKvq8ni" target="_blank">무료 상담 신청하기</a>
+          <div style="margin-top:24px;background:#f8f5ef;border-radius:22px;padding:22px;">
+            <h3>상담 가능 분야</h3>
+            <div class="tags">
+              <span class="tag">최신가전 결합 상담</span><span class="tag">KB헬스케어 결합 상담</span><span class="tag">건강관리 라이프케어 상담</span><span class="tag">상조 가입 상담</span><span class="tag">부모님 상조 준비</span><span class="tag">가족 단위 상담</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="label">REVIEW</div>
+        <h2 class="section-title">소비자 후기</h2>
+        <p style="margin-top:18px;color:#4b5563;font-size:18px;">상담을 통해 최신가전 결합과 KB헬스케어 라이프케어 구조를 확인하신 고객님들의 후기입니다.</p>
+        <div class="faq-grid">
+          <div class="faq"><h3>“가전 혜택이 같이 있어서 이해가 쉬웠어요.”</h3><p>상조만 설명받는 줄 알았는데 최신가전 결합 구조와 납입 방식까지 한 번에 안내받아서 선택 기준이 명확해졌습니다.</p></div>
+          <div class="faq"><h3>“부모님 준비를 현실적으로 할 수 있었습니다.”</h3><p>갑작스러운 상황을 대비해야 한다는 건 알고 있었지만 미루고 있었는데, 월 납입 구조와 만기 환급 조건을 듣고 부담을 줄여 준비할 수 있었습니다.</p></div>
+          <div class="faq"><h3>“KB헬스케어까지 연결되는 점이 좋았습니다.”</h3><p>단순 상조가 아니라 건강관리와 라이프케어까지 함께 볼 수 있어서 현재와 미래를 같이 준비하는 느낌이 들었습니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="label">FAQ</div>
+        <h2 class="section-title">자주 묻는 질문</h2>
+        <div class="faq-grid">
+          <div class="faq"><h3>Q. 상담만 받아도 되나요?</h3><p>A. 네. 가입을 강요하지 않으며 현재 상황에 맞는 준비 방향을 안내드립니다.</p></div>
+          <div class="faq"><h3>Q. 기존 상조와 비교 상담도 가능한가요?</h3><p>A. 네. 현재 가입 중인 상품을 기준으로 비교 상담이 가능합니다.</p></div>
+          <div class="faq"><h3>Q. 최신가전 리스트는 어디서 볼 수 있나요?</h3><p>A. 홈페이지 내 ‘최신가전 리스트 보기’ 버튼을 누르면 결합 가능한 가전 리스트를 확인하실 수 있습니다.</p></div>
+          <div class="faq"><h3>Q. KB헬스케어 서비스는 어떻게 확인하나요?</h3><p>A. ‘KB헬스케어 소개 보기’ 버튼을 통해 건강관리 및 라이프케어 결합 서비스를 자세히 확인하실 수 있습니다.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>
+        <h2>더 좋은 라이프 든든본부</h2>
+        <p>상조를 위한 상조가 아닌, 현재와 미래를 위한 상조. 더 좋은 라이프 든든본부에서 든든한 라이프 플래너가 되어드리겠습니다.</p>
+      </div>
+      <div class="hero-buttons">
+        <a class="btn" style="background:#fff;color:#26211c;" href="tel:01080683505">전화 상담</a>
+        <a class="btn btn-line" style="color:white;border-color:rgba(255,255,255,.25);" href="https://open.kakao.com/o/sCKvq8ni" target="_blank">카카오톡 상담</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
